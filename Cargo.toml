@@ -71,3 +71,7 @@ path = "src/starklings_runner.rs"
 [[bin]]
 name = "starklings-tester"
 path = "src/starklings_tester.rs"
+
+[[bin]]
+name = "cairo-run"
+path = "src/cli.rs"
