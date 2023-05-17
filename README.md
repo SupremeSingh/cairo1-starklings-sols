@@ -62,7 +62,7 @@ let number: u8 = 1_u8;
 let number: felt = 3; 
 ```
 
-Further, if you wish to pass a pointer to a function, and do not want to modify it's ownership - you can always just use a reference to it as follows - 
+Further, if you wish to pass a reference to a function, and do not want to modify it's ownership - you can always just use a reference to it as follows - 
 
 ```
 fn is_low_char(ref char: felt252) -> bool {
@@ -239,7 +239,7 @@ Message::Move((10_u32, 30_u32))
 
 Every data type in Cairo 1, say `T`, has a snapshot version `@T` which is always droppable and duplicatable. It represents a snapshot of the value in a given time in the past. This is similar from references - which allow you to shift ownership temporarily and *non-mutably* in a scope - like a function. Few differences - 
 
-- The snapshot is not a pointer, it's the full object, so using it doesn't help with performance 
+- The snapshot is not a reference, it's the full object, so using it doesn't help with performance 
 - If the object is changed after creating the snapshot, the snapshot will not be affected
 
 If you have a value `x` of type `T`, you can use `@x` to get a snapshot of it. For example, if you take a snapshot of an array, and then add a value to the array, the snapshot will still have the original values, without the new value
